@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'therubyracer', '~> 0.12.2'
+
+gem 'less-rails', '~> 2.7', '>= 2.7.1'
+
+gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
