@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160228131218) do
+ActiveRecord::Schema.define(version: 20160303092559) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.integer  "company_id"
+    t.integer  "invoice_id"
+    t.integer  "bill_id"
+    t.integer  "recieve_payment_id"
+    t.integer  "expense_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "addstocks", force: :cascade do |t|
     t.decimal  "stock"
@@ -97,6 +107,20 @@ ActiveRecord::Schema.define(version: 20160228131218) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "expenses", force: :cascade do |t|
+    t.integer  "supplier_id"
+    t.string   "payee_name"
+    t.string   "payment_method"
+    t.date     "payment_date"
+    t.string   "email"
+    t.integer  "reference_no"
+    t.text     "description"
+    t.string   "amount"
+    t.float    "tax"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "invoices", force: :cascade do |t|
     t.integer  "client_id"
     t.integer  "invoice_number"
@@ -130,11 +154,103 @@ ActiveRecord::Schema.define(version: 20160228131218) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pay_bills", force: :cascade do |t|
+    t.integer  "supplier_id"
+    t.string   "payment_method"
+    t.date     "payment_date"
+    t.string   "bill_no"
+    t.integer  "reference_no"
+    t.text     "description"
+    t.string   "amount"
+    t.float    "tax"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "product_categories", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "productions", force: :cascade do |t|
+    t.decimal  "quntity"
+    t.string   "unit"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "dwg_no"
+    t.integer  "available_stock"
+    t.integer  "client_id"
+    t.integer  "unit_cost"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "purchase_orders", force: :cascade do |t|
+    t.integer  "supplier_id"
+    t.date     "p_o_date"
+    t.text     "shipping_address"
+    t.string   "ship_to"
+    t.integer  "product_id"
+    t.text     "description"
+    t.decimal  "quantity"
+    t.string   "unit"
+    t.string   "rate"
+    t.decimal  "amount"
+    t.float    "tax"
+    t.text     "message"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "recieve_payments", force: :cascade do |t|
+    t.integer  "client_id"
+    t.integer  "invoice_id"
+    t.string   "email"
+    t.date     "payment_date"
+    t.string   "payment_method"
+    t.integer  "reference_no"
+    t.string   "amount_recieved"
+    t.string   "deposited_to"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "suppliers", force: :cascade do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "phone_number"
+    t.text     "info"
+    t.string   "p_a_n_no"
+    t.string   "t_i_n_no"
+    t.string   "c_s_t_reg"
+    t.string   "key_contact_person"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  root  'dashboard#index'
+
   
+  resources :accounts
+  resources :accounts
+  resources :purchase_orders
+  resources :pay_bills
+  resources :expenses
+  resources :recieve_payments
+  resources :suppliers
+  resources :products
+  resources :productions
   resources :product_categories
   resources :categories
   resources :material_products

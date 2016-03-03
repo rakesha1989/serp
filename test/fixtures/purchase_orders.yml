@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  supplier_id: 1
+  p_o_date: 2016-03-03
+  shipping_address: MyText
+  ship_to: MyString
+  product_id: 1
+  description: MyText
+  quantity: 9.99
+  unit: MyString
+  rate: MyString
+  amount: 9.99
+  tax: 1.5
+  message: MyText
+
+two:
+  supplier_id: 1
+  p_o_date: 2016-03-03
+  shipping_address: MyText
+  ship_to: MyString
+  product_id: 1
+  description: MyText
+  quantity: 9.99
+  unit: MyString
+  rate: MyString
+  amount: 9.99
+  tax: 1.5
+  message: MyText
