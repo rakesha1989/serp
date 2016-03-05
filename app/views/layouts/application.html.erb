@@ -48,20 +48,25 @@
         <a class="navbar-brand" href="#">Serp</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Add client", new_client_path  %></li>
+
+          <% if user_signed_in? %>
+            <li><%= link_to "Add client", clients_path  %></li>
             <li><%= link_to "Add Stocks", new_addstock_path  %></li>
-            <li><%= link_to "Add Employee", new_employee_path  %></li>
-            <li><%= link_to "Create Invoice", new_invoice_path  %></li>
-            <li><%= link_to "Create Purchase Order", new_purchase_order_path  %></li>
-            <li><%= link_to "Recieve Payment", new_recieve_payment_path  %></li>
-            <li><%= link_to "Pay Bills", new_pay_bill_path  %></li>
-            <li><%= link_to "Create Expense", new_expense_path  %></li>
-            <li><%= link_to "Create Delivery Challan", new_despatch_path  %></li>
-            <li><%= link_to "Add Supplier", new_supplier_path  %></li>
-            <li><%= link_to "Add Material", new_material_path %></li>
-            <li><%= link_to "Add Product", new_product_path %></li>
-            <li><%= link_to "Add Company", new_company_path %></li>
-            <li><%= link_to "Daily production", new_production_path %></li>
+            <li><%= link_to "Add Employee", employees_path  %></li>
+            <li><%= link_to "Create Invoice", invoices_path  %></li>
+            <li><%= link_to "Create Purchase Order", purchase_orders_path  %></li>
+            <li><%= link_to "Recieve Payment", recieve_payments_path  %></li>
+            <li><%= link_to "Pay Bills", pay_bills_path  %></li>
+            <li><%= link_to "Create Expense", expenses_path  %></li>
+            <li><%= link_to "Create Delivery Challan", despatches_path  %></li>
+            <li><%= link_to "Add Supplier", suppliers_path  %></li>
+            <li><%= link_to "Add Material", materials_path %></li>
+            <li><%= link_to "Add Product", products_path %></li>
+            <li><%= link_to "Add Company", companies_path %></li>
+            <li><%= link_to "Daily production", productions_path %></li>
+            <li> <%= link_to "sign out", destroy_user_session_path, :method => 'delete' %> </li>
+            <li> <%= link_to "sign in", new_user_session_path, :method => 'delete' %> </li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -74,15 +79,20 @@
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
+         <% if user_signed_in? %>
         <div class="col-lg-3">
           <div class="well sidebar-nav">
+          
             <h3>Sidebar</h3>
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
+             
               <li><%= link_to "Attendance", attendances_path  %></li>
               <li><%= link_to "Category", new_category_path  %></li>
               <li><%= link_to "Contacts", contacts_path  %></li>
+             
             </ul>
+             <% end %>
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
