@@ -11,6 +11,8 @@
       <th><%= model_class.human_attribute_name(:available_stock) %></th>
       <th><%= model_class.human_attribute_name(:client_id) %></th>
       <th><%= model_class.human_attribute_name(:unit_cost) %></th>
+      <th><%= model_class.human_attribute_name(:category) %></th>
+      <th><%= model_class.human_attribute_name(:material) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -22,8 +24,14 @@
         <td><%= product.name %></td>
         <td><%= product.dwg_no %></td>
         <td><%= product.available_stock %></td>
-        <td><%= product.client_id %></td>
+        <td><%= product.client.name %></td>
         <td><%= product.unit_cost %></td>
+        <td><% product.categories.each do |c|%>
+        <%=c.name%><span><p style="display:inline">,</p></span>
+        <%end%></td>
+        <td><% product.materials.each do |m|%>
+        <%=m.name%>
+        <%end%></td>
         <td><%=l product.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:quntity) %></th>
+      <th><%= model_class.human_attribute_name(:quantity) %></th>
       <th><%= model_class.human_attribute_name(:unit) %></th>
       <th><%= model_class.human_attribute_name(:product_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -17,7 +17,7 @@
     <% @productions.each do |production| %>
       <tr>
         <td><%= link_to production.id, production_path(production) %></td>
-        <td><%= production.quntity %></td>
+        <td><%= production.quantity %></td>
         <td><%= production.unit %></td>
         <td><%= production.product_id %></td>
         <td><%=l production.created_at %></td>

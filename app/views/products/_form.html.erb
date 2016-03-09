@@ -50,6 +50,24 @@
     </div>
     <%=f.error_span(:unit_cost) %>
   </div>
+  <br/>
+  <h3>Select Category</h3>
+  <% Category.all.each do |category| %>
+                  
+
+   <%= check_box_tag "product[category_ids][]", category.id, @product.category_ids.include?(category.id), :id => dom_id(category) %>
+   <%= label_tag dom_id(category), category.name%><br/>
+                    
+   <%end%>
+<br/>
+<h3>Select Material</h3>
+    <% Material.all.each do |material| %>
+                  
+
+   <%= check_box_tag "product[material_ids][]", material.id, @product.material_ids.include?(material.id), :id => dom_id(material) %>
+   <%= label_tag dom_id(material), material.name%><br/>
+                    
+   <%end%>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
@@ -58,5 +76,13 @@
                 products_path, :class => 'btn btn-default' %>
     </div>
   </div>
+
+
+
+                    
+   
+
+
+
 
 <% end %>

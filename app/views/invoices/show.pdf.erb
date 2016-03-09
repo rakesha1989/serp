@@ -1,0 +1,9 @@
+<%= wicked_pdf_stylesheet_link_tag 'application', :media => "all"  %>
+  
+<h2 style="text-align:center">INVOICE</h2>
+<label style="padding-right:10px">Clinet Name:</label>
+				<%=@invoice.client.name%><br/>	
+
+<label style="padding-right:10px">Clinet Address:</label>
+				<%=@invoice.client.address%>				
+			

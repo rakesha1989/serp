@@ -10,6 +10,13 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 
 gem 'cancancan', '~> 1.13', '>= 1.13.1'
 
+gem 'wicked_pdf', '~> 1.0', '>= 1.0.4'
+
+gem 'wkhtmltopdf'
+
+gem 'wkhtmltopdf-binary'	
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record

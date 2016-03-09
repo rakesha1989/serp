@@ -10,6 +10,12 @@ class InvoicesController < ApplicationController
   # GET /invoices/1
   # GET /invoices/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Invoice" 
+      end
+    end
   end
 
   # GET /invoices/new

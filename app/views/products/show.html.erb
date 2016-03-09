@@ -14,6 +14,14 @@
   <dd><%= @product.client_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:unit_cost) %>:</strong></dt>
   <dd><%= @product.unit_cost %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
+  <dd><% @product.categories.each do |c|%>
+      <%=c.name%><span><p style="display:inline">,</p></span>
+      <%end%></dd>
+  <dt><strong><%= model_class.human_attribute_name(:material) %>:</strong></dt>
+  <dd><% @product.materials.each do |m|%>
+  <%=m.name%>
+      <%end%></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

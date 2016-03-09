@@ -45,7 +45,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Serp</a>
+        <a class="navbar-brand" href="<%=root_path%>">Serp</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
 
@@ -64,8 +64,12 @@
             <li><%= link_to "Add Product", products_path %></li>
             <li><%= link_to "Add Company", companies_path %></li>
             <li><%= link_to "Daily production", productions_path %></li>
-            <li> <%= link_to "sign out", destroy_user_session_path, :method => 'delete' %> </li>
-            <li> <%= link_to "sign in", new_user_session_path, :method => 'delete' %> </li>
+            <li><%= link_to "sign out", destroy_user_session_path, :method => 'delete' %> </li>
+            <li><%= link_to "sign in", new_user_session_path, :method => 'delete' %> </li>
+            <li><%= link_to "Attendance", attendances_path  %></li>
+            <li><%= link_to "Category", categories_path  %></li>
+            <li><%= link_to "Contacts", contacts_path  %></li>
+             
             <% end %>
           </ul>
         </div>
@@ -79,20 +83,7 @@
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
-         <% if user_signed_in? %>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
           
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-             
-              <li><%= link_to "Attendance", attendances_path  %></li>
-              <li><%= link_to "Category", new_category_path  %></li>
-              <li><%= link_to "Contacts", contacts_path  %></li>
-             
-            </ul>
-             <% end %>
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
