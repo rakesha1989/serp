@@ -19,8 +19,8 @@
         <td><%= link_to material.id, material_path(material) %></td>
         <td><%= material.name %></td>
         <td><%= material.stock %></td>
-        <td><%= material.products.pluck[:name] %></td>
-        <td><%=l material.created_at %></td>
+        <td><%= material.products.name %></td>
+        <td><%= material.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_material_path(material), :class => 'btn btn-default btn-xs' %>
