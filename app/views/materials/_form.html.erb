@@ -27,7 +27,15 @@
     <div class="col-lg-10">
       <%= f.text_field :stock, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:stock) %>
+    <%=f.error_span(:stock) %><br/>
+    <br>
+
+    <div class="form-group">
+    <%= f.label :unit, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :unit, %w[Kgs No's], :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:unit) %>
 
 
   <div class="form-group">

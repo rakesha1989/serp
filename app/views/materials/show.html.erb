@@ -8,8 +8,9 @@
   <dd><%= @material.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:stock) %>:</strong></dt>
   <dd><%= @material.stock %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:product_id) %>:</strong></dt>
-  <dd><%= @material.product_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:unit) %>:</strong></dt>
+  <dd><%= @material.unit %></dd>
+ 
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
