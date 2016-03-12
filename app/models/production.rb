@@ -2,6 +2,9 @@ class Production < ActiveRecord::Base
 
 	belongs_to :product
 	after_save :incstock
+
+	validates_presence_of :unit, :product_id, :quantity
+	validates_numericality_of :quantity
 	
 
   def incstock

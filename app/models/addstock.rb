@@ -2,6 +2,8 @@ class Addstock < ActiveRecord::Base
 
 	belongs_to :material
 	after_save :increase_stock
+
+	validates_presence_of :stock, :unit, :material_id
 	
 
   def increase_stock
