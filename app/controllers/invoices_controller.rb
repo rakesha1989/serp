@@ -1,4 +1,8 @@
 class InvoicesController < ApplicationController
+
+  load_and_authorize_resource
+
+  
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
 
   # GET /invoices

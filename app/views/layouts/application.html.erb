@@ -50,25 +50,98 @@
           <ul class="nav navbar-nav">
 
           <% if user_signed_in? %>
-            <li><%= link_to "Add client", clients_path  %></li>
-            <li><%= link_to "Add Stocks", new_addstock_path  %></li>
-            <li><%= link_to "Add Employee", employees_path  %></li>
-            <li><%= link_to "Create Invoice", invoices_path  %></li>
-            <li><%= link_to "Create Purchase Order", purchase_orders_path  %></li>
-            <li><%= link_to "Recieve Payment", recieve_payments_path  %></li>
-            <li><%= link_to "Pay Bills", pay_bills_path  %></li>
-            <li><%= link_to "Create Expense", expenses_path  %></li>
-            <li><%= link_to "Create Delivery Challan", despatches_path  %></li>
-            <li><%= link_to "Add Supplier", suppliers_path  %></li>
-            <li><%= link_to "Add Material", materials_path %></li>
-            <li><%= link_to "Add Product", products_path %></li>
-            <li><%= link_to "Add Company", companies_path %></li>
-            <li><%= link_to "Daily production", productions_path %></li>
-            <li><%= link_to "sign out", destroy_user_session_path, :method => 'delete' %> </li>
-            <li><%= link_to "sign in", new_user_session_path, :method => 'delete' %> </li>
-            <li><%= link_to "Attendance", attendances_path  %></li>
-            <li><%= link_to "Category", categories_path  %></li>
-            <li><%= link_to "Contacts", contacts_path  %></li>
+
+            <li>
+            <% if can? :create, Client.new %>
+            <%= link_to "Add client", clients_path  %>   
+            <% end %> 
+            </li>
+            <li>
+            <% if can? :create, Addstock.new %>
+            <%= link_to "Add Stocks", new_addstock_path  %>  
+            <% end %> 
+            </li>
+            <li>
+            <% if can? :create, Employee.new %>
+            <%= link_to "Add Employee", employees_path  %>
+            <% end %>
+            </li>
+            <li>
+            <% if can? :create, Invoice.new %>
+            <%= link_to "Create Invoice", invoices_path  %>
+            <% end %>
+            </li>
+            <li>
+            <% if can? :create, PurchaseOrder.new %>
+            <%= link_to "Create Purchase Order", purchase_orders_path  %>
+            <% end %>
+            </li>
+            <li>
+            <% if can? :create, RecievePayment.new %>
+            <%= link_to "Recieve Payment", recieve_payments_path  %>
+            <% end %>
+            </li>
+            <li>
+            <% if can? :create, PayBill.new %>
+            <%= link_to "Pay Bills", pay_bills_path  %>
+            <% end %>
+            </li>
+            <li>
+            <% if can? :create, Expense.new %>
+            <%= link_to "Create Expense", expenses_path  %>
+            <% end %>
+            </li>
+            <li>
+            <% if can? :create, Despatch.new %>
+            <%= link_to "Create Delivery Challan", despatches_path  %>
+            <% end %>
+            </li>
+            <li>
+            <% if can? :create, Supplier.new %>
+            <%= link_to "Add Supplier", suppliers_path  %>
+            <% end %>
+            </li>
+            <li>
+            <% if can? :create, Material.new %>
+            <%= link_to "Add Material", materials_path %>
+            <% end %>
+            </li>
+            <li>
+            <% if can? :create, Product.new %>
+            <%= link_to "Add Product", products_path %>
+            <% end %>
+            </li>
+            <li>
+            <% if can? :create, Company.new %>
+            <%= link_to "Add Company", companies_path %>
+            <% end %>
+            </li>
+            <li>
+            <% if can? :create, Production.new %>
+            <%= link_to "Daily production", productions_path %>
+            <% end %>
+            </li>
+            <li>
+            <%= link_to "sign out", destroy_user_session_path, :method => 'delete' %> 
+            </li>
+            <li>
+            <%= link_to "sign in", new_user_session_path, :method => 'delete' %>
+            </li>
+            <li>
+            <% if can? :create, Attendance.new %>
+            <%= link_to "Attendance", attendances_path  %>
+            <% end %>
+            </li>
+            <li>
+            <% if can? :create, Category.new %>
+            <%= link_to "Category", categories_path  %>
+            <% end %>
+            </li>
+            <li>
+            <% if can? :create, Contact.new %>
+            <%= link_to "Contacts", contacts_path  %>
+            <% end %>
+            </li>
              
             <% end %>
           </ul>

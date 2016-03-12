@@ -6,5 +6,17 @@ class User < ActiveRecord::Base
 
   has_many :permissions
   has_many :roles, through: :permissions     
+
+  #after_save :setup_user_role
+
+	def role?(role)
+    self.roles.pluck(:name).include?(role)
+	end
+
+	#def setup_user_role
+    #user=User.last
+     #user.roles << Role.where("id=?",self.role)
+  #end
+
    
 end

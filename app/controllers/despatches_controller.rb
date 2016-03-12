@@ -1,4 +1,7 @@
 class DespatchesController < ApplicationController
+
+  load_and_authorize_resource
+  
   before_action :set_despatch, only: [:show, :edit, :update, :destroy]
 
   # GET /despatches

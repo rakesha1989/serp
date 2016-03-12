@@ -1,4 +1,7 @@
 class PayBillsController < ApplicationController
+
+  load_and_authorize_resource
+  
   before_action :set_pay_bill, only: [:show, :edit, :update, :destroy]
 
   # GET /pay_bills
