@@ -9,21 +9,15 @@ class InvoicesController < ApplicationController
   # GET /invoices.json
 
   def index
-    @invoices = (current_user.role? "director") ? Invoice.all.order(due_date: :desc)  : current_user.expenses.order(due_date: :desc)
+    @invoice = Invoice.all
+    #@invoices = (current_user.role? "director") ? Invoice.all.order(due_date: :desc)  : current_user.invoices.order(due_date: :desc)
   end
 
   # GET /assignments/1
   # GET /assignments/1.json
   def show
-    @expense = (current_user.role? "director") ? Expense.find(params[:id]) : current_user.expenses.find(params[:id]) 
-  end
-  def index
-    @invoices = Invoice.all
-  end
-
-  # GET /invoices/1
-  # GET /invoices/1.json
-  def show
+    
+    #@invoice = (current_user.role? "director") ? Invoice.find(params[:id]) : current_user.invoices.find(params[:id]) 
     respond_to do |format|
       format.html
       format.pdf do
@@ -31,6 +25,9 @@ class InvoicesController < ApplicationController
       end
     end
   end
+
+  # GET /invoices/1
+  # GET /invoices/1.json
 
   # GET /invoices/new
   def new

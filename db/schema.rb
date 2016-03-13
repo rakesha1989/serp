@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309160719) do
+ActiveRecord::Schema.define(version: 20160313073049) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "company_id"
@@ -204,7 +204,6 @@ ActiveRecord::Schema.define(version: 20160309160719) do
     t.date     "p_o_date"
     t.text     "shipping_address"
     t.string   "ship_to"
-    t.integer  "product_id"
     t.text     "description"
     t.decimal  "quantity"
     t.string   "unit"
@@ -214,6 +213,7 @@ ActiveRecord::Schema.define(version: 20160309160719) do
     t.text     "message"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "material_id"
   end
 
   create_table "recieve_payments", force: :cascade do |t|

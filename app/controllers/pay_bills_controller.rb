@@ -1,19 +1,29 @@
 class PayBillsController < ApplicationController
 
   load_and_authorize_resource
-  
+
   before_action :set_pay_bill, only: [:show, :edit, :update, :destroy]
 
   # GET /pay_bills
   # GET /pay_bills.json
+
   def index
     @pay_bills = PayBill.all
+    #@pay_bills = (current_user.role? "director") ? PayBill.all.order(payment_date: :desc)  : current_user.pay_bills.order(payment_date: :desc)
   end
 
+  def show
+    #@pay_bill = (current_user.role? "director") ? PayBill.find(params[:id]) : current_user.pay_bills.find(params[:id]) 
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "PayBill" 
+      end
+    end
+  end
   # GET /pay_bills/1
   # GET /pay_bills/1.json
-  def show
-  end
+
 
   # GET /pay_bills/new
   def new

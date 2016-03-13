@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   
-  
+  devise_for :users
   root  'dashboard#index'
+
+  
 
   
   resources :accounts
@@ -28,7 +30,8 @@ Rails.application.routes.draw do
   resources :addstocks
   resources :permissions
   resources :roles
-  devise_for :users
+
+  
 
 
 

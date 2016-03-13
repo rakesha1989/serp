@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
 
+	has_many :invoices
 	has_many :material_products
 	has_many :materials, through: :material_products
 	has_many :product_categories
