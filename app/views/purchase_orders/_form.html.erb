@@ -27,16 +27,9 @@
     <div class="col-lg-10">
       <%= f.collection_select :material_id, Material.all, :id, :name, prompt:"Select Material", :class => 'form-control' %>
     </div>
-    <%=f.error_span(:supplier_id) %>
+    <%=f.error_span(:material_id) %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :product_id, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :product_id, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:product_id) %>
-  </div>
   <div class="form-group">
     <%= f.label :p_o_date, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
@@ -62,7 +55,7 @@
   <div class="form-group">
     <%= f.label :description, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :description, :class => 'form-control' %>
+      <%= f.text_area :description, :class => 'form-control' %>
     </div>
     <%=f.error_span(:description) %>
   </div>
@@ -76,7 +69,7 @@
   <div class="form-group">
     <%= f.label :unit, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :unit, :class => 'form-control' %>
+      <%= f.select :unit, %w[Kgs No's], :class => 'form-control' %>
     </div>
     <%=f.error_span(:unit) %>
   </div>
@@ -97,14 +90,14 @@
   <div class="form-group">
     <%= f.label :tax, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :tax, :class => 'form-control' %>
+      <%= f.select :tax, %W[14.5% 5.5%], :class => 'form-control' %>
     </div>
     <%=f.error_span(:tax) %>
   </div>
   <div class="form-group">
     <%= f.label :message, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :message, :class => 'form-control' %>
+      <%= f.text_area :message, :class => 'form-control' %>
     </div>
     <%=f.error_span(:message) %>
   </div>

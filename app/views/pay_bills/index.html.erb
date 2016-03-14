@@ -22,7 +22,7 @@
     <% @pay_bills.each do |pay_bill| %>
       <tr>
         <td><%= link_to pay_bill.id, pay_bill_path(pay_bill) %></td>
-        <td><%= pay_bill.supplier_id %></td>
+        <td><%= pay_bill.supplier.name %></td>
         <td><%= pay_bill.payment_method %></td>
         <td><%= pay_bill.payment_date %></td>
         <td><%= pay_bill.bill_no %></td>

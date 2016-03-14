@@ -21,12 +21,12 @@
       <tr>
         <td><%= link_to despatch.id, despatch_path(despatch) %></td>
         <td><%= despatch.day %></td>
-        <td><%= despatch.product_id %></td>
+        <td><%= despatch.product.name %></td>
         <td><%= despatch.quantity %></td>
         <td><%= despatch.unit %></td>
-        <td><%= despatch.client_id %></td>
+        <td><%= despatch.client.name %></td>
         <td><%= despatch.d_c_number %></td>
-        <td><%=l despatch.created_at %></td>
+        <td><%= despatch.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_despatch_path(despatch), :class => 'btn btn-default btn-xs' %>

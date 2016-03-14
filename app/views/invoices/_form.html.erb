@@ -97,7 +97,7 @@
   <div class="form-group">
     <%= f.label :tax, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :tax, :class => 'form-control' %>
+      <%= f.select :tax, %W[14.5 5.5], :class => 'form-control' %>
     </div>
     <%=f.error_span(:tax) %>
   </div>

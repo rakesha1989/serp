@@ -5,15 +5,15 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:supplier_id) %>:</strong></dt>
-  <dd><%= @purchase_order.supplier_id %></dd>
+  <dd><%= @purchase_order.supplier.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:material_id) %>:</strong></dt>
+  <dd><%= @purchase_order.material.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:p_o_date) %>:</strong></dt>
   <dd><%= @purchase_order.p_o_date %></dd>
   <dt><strong><%= model_class.human_attribute_name(:shipping_address) %>:</strong></dt>
   <dd><%= @purchase_order.shipping_address %></dd>
   <dt><strong><%= model_class.human_attribute_name(:ship_to) %>:</strong></dt>
   <dd><%= @purchase_order.ship_to %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:product_id) %>:</strong></dt>
-  <dd><%= @purchase_order.product_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @purchase_order.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:quantity) %>:</strong></dt>
