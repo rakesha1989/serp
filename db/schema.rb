@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160313073049) do
+ActiveRecord::Schema.define(version: 20160314170701) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "company_id"
@@ -88,8 +88,9 @@ ActiveRecord::Schema.define(version: 20160313073049) do
     t.string   "unit"
     t.integer  "client_id"
     t.integer  "d_c_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "material_id"
   end
 
   create_table "employees", force: :cascade do |t|
@@ -184,9 +185,10 @@ ActiveRecord::Schema.define(version: 20160313073049) do
   create_table "productions", force: :cascade do |t|
     t.string   "unit"
     t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.decimal  "quantity"
+    t.integer  "material_id"
   end
 
   create_table "products", force: :cascade do |t|

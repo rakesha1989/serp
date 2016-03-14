@@ -72,6 +72,6 @@ class ProductionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def production_params
-      params.require(:production).permit(:quantity, :unit, :product_id)
+      params.require(:production).permit(:quantity, :unit, :product_id, :material_id)
     end
 end

@@ -8,6 +8,8 @@
   <dd><%= @despatch.day %></dd>
   <dt><strong><%= model_class.human_attribute_name(:product_id) %>:</strong></dt>
   <dd><%= @despatch.product.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:material_id) %>:</strong></dt>
+  <dd><%= @despatch.material.try(:name) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:quantity) %>:</strong></dt>
   <dd><%= @despatch.quantity %></dd>
   <dt><strong><%= model_class.human_attribute_name(:unit) %>:</strong></dt>

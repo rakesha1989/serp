@@ -72,6 +72,6 @@ class DespatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def despatch_params
-      params.require(:despatch).permit(:day, :product_id, :quantity, :unit, :client_id, :d_c_number)
+      params.require(:despatch).permit(:day, :product_id, :quantity, :unit, :client_id, :d_c_number, :material_id)
     end
 end

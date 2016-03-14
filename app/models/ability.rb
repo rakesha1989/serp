@@ -9,8 +9,6 @@ class Ability
         can :create, RecievePayment
         can :create, Despatch
         can :create, PayBill
-        can :create, Employee
-        can :create, Attendance
         can :create, Expense
         can :create, PurchaseOrder
         can :create, Client
@@ -31,8 +29,6 @@ class Ability
         can :create, RecievePayment
         can :create, Despatch
         can :create, PayBill
-        can :create, Employee
-        can :create, Attendance
         can :create, Expense
         can :create, PurchaseOrder
         can :create, Production

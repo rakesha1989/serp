@@ -9,6 +9,7 @@
       <th><%= model_class.human_attribute_name(:quantity) %></th>
       <th><%= model_class.human_attribute_name(:unit) %></th>
       <th><%= model_class.human_attribute_name(:product_id) %></th>
+      <th><%= model_class.human_attribute_name(:material_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -19,7 +20,8 @@
         <td><%= link_to production.id, production_path(production) %></td>
         <td><%= production.quantity %></td>
         <td><%= production.unit %></td>
-        <td><%= production.product.try(:name) %></td>
+        <td><%= production.product.name %></td>
+        <td><%= production.material.try(:name) %></td>
         <td><%=l production.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

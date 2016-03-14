@@ -49,11 +49,12 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
 
+
           <% if user_signed_in? %>
 
             <li>
             <% if can? :create, Client.new %>
-            <%= link_to "Add client", clients_path  %>   
+            <%= link_to "Clients", clients_path  %>   
             <% end %> 
             </li>
             <li>
@@ -63,17 +64,17 @@
             </li>
             <li>
             <% if can? :create, Employee.new %>
-            <%= link_to "Add Employee", employees_path  %>
+            <%= link_to "Employee", employees_path  %>
             <% end %>
             </li>
             <li>
             <% if can? :create, Invoice.new %>
-            <%= link_to "Create Invoice", invoices_path  %>
+            <%= link_to "Invoice", invoices_path  %>
             <% end %>
             </li>
             <li>
             <% if can? :create, PurchaseOrder.new %>
-            <%= link_to "Create Purchase Order", purchase_orders_path  %>
+            <%= link_to "Purchase Order", purchase_orders_path  %>
             <% end %>
             </li>
             <li>
@@ -88,32 +89,32 @@
             </li>
             <li>
             <% if can? :create, Expense.new %>
-            <%= link_to "Create Expense", expenses_path  %>
+            <%= link_to "Expenses", expenses_path  %>
             <% end %>
             </li>
             <li>
             <% if can? :create, Despatch.new %>
-            <%= link_to "Create Delivery Challan", despatches_path  %>
+            <%= link_to "Despatch", despatches_path  %>
             <% end %>
             </li>
             <li>
             <% if can? :create, Supplier.new %>
-            <%= link_to "Add Supplier", suppliers_path  %>
+            <%= link_to "Suppliers", suppliers_path  %>
             <% end %>
             </li>
             <li>
             <% if can? :create, Material.new %>
-            <%= link_to "Add Material", materials_path %>
+            <%= link_to "Materials", materials_path %>
             <% end %>
             </li>
             <li>
             <% if can? :create, Product.new %>
-            <%= link_to "Add Product", products_path %>
+            <%= link_to "Products", products_path %>
             <% end %>
             </li>
             <li>
             <% if can? :create, Company.new %>
-            <%= link_to "Add Company", companies_path %>
+            <%= link_to "My Company", companies_path %>
             <% end %>
             </li>
             <li>
@@ -148,7 +149,7 @@
         </div>
       </div>
     </div>
-  
+   
   
     <div class="container">
       <div class="row">
