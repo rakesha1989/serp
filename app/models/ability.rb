@@ -25,10 +25,10 @@ class Ability
 
     elsif user.role? "admin"
         can :read, :all
-        can :create, Invoice
+        can :create, Invoice    
         can :create, RecievePayment
         can :create, Despatch
-        can :create, PayBill
+        can :create, PayBill       
         can :create, Expense
         can :create, PurchaseOrder
         can :create, Production
